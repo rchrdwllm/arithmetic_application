@@ -87,7 +87,12 @@ class _ArithmeticState extends State<Arithmetic> {
                       keyboardType: TextInputType.number,
                       onChanged: (value) {
                         setState(() {
-                          num1 = int.tryParse(value) ?? 0;
+                          try {
+                            num1 = int.parse(value);
+                          } catch (e) {
+                            num1 = 0;
+                            result = 'NaN';
+                          }
                         });
                       },
                       controller: num1Controller,
@@ -103,7 +108,12 @@ class _ArithmeticState extends State<Arithmetic> {
                       keyboardType: TextInputType.number,
                       onChanged: (value) {
                         setState(() {
-                          num2 = int.tryParse(value) ?? 0;
+                          try {
+                            num2 = int.parse(value);
+                          } catch (e) {
+                            num2 = 0;
+                            result = 'NaN';
+                          }
                         });
                       },
                       controller: num2Controller,
