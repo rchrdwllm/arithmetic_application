@@ -164,13 +164,9 @@ class _ArithmeticState extends State<Arithmetic> {
                     result = "Undefined";
 
                     return;
-                  } else if (num2 > num1) {
-                    result = "$num1/$num2";
-
-                    return;
                   }
 
-                  result = (num1 ~/ num2).toString();
+                  result = (num1 / num2).toString();
                 });
               }),
             ],
